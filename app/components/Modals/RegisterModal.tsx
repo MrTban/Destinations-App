@@ -82,6 +82,7 @@ const RegisterModal = () => {
 		//*	 REGISTER WITH EMAIL PROVIDERS
 		<div className='flex flex-col gap-4 mt-3'>
 			<hr />
+
 			{/* //* GOOGLE */}
 			<Button outline label='Continuar con Google' icon={FcGoogle} onClick={() => {}} />
 
@@ -97,7 +98,7 @@ const RegisterModal = () => {
 						onClick={registerModal.onClose}
 						className='text-neutral-800 cursor-pointer hover:underline'
 					>
-						Log In
+						Inicia sesión
 					</div>
 				</div>
 			</div>
