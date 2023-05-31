@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en'>
 			<body className={font.className}>
 				<ClientOnly>
-					<Modal />
+					<Modal isOpen title='Hola Viajero' />
 					<Navbar />
 				</ClientOnly>
 				{children}
