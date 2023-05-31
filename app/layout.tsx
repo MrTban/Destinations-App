@@ -1,8 +1,9 @@
-import ClientOnly from './components/ClientOnly'
-import Modal from './components/Modals/Modal'
-import Navbar from './components/Navbar/Narbar'
-import './globals.css'
 import { Nunito } from 'next/font/google'
+
+import './globals.css'
+import Navbar from './components/Navbar/Narbar'
+import ClientOnly from './components/ClientOnly'
+import RegisterModal from './components/Modals/RegisterModal'
 
 const font = Nunito({ subsets: ['latin'] })
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en'>
 			<body className={font.className}>
 				<ClientOnly>
-					<Modal isOpen title='Hola Viajero' />
+					<RegisterModal />
 					<Navbar />
 				</ClientOnly>
 				{children}
