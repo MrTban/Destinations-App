@@ -8,6 +8,8 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import Modal from './Modal'
+import Heading from '../Heading'
+import Input from '../Inputs/Input'
 
 const RegisterModal = () => {
 	const registerModal = useRegisterModal()
@@ -40,6 +42,37 @@ const RegisterModal = () => {
 				setIsLoading(false)
 			})
 	}
+
+	const bodyContent = (
+		<div className='flex flex-col gap-4'>
+			<Heading title='Bienvenido a COOL' subtitle='Crea una cuenta!' />
+			<Input
+				id='email'
+				label='Email'
+				disabled={isLoading}
+				register={register}
+				errors={errors}
+				required
+			/>
+			<Input
+				id='name'
+				label='Nombre'
+				disabled={isLoading}
+				register={register}
+				errors={errors}
+				required
+			/>
+			<Input
+				id='password'
+				label='Contraseña'
+				disabled={isLoading}
+				register={register}
+				errors={errors}
+				required
+			/>
+		</div>
+	)
+
 	return (
 		<Modal
 			disabled={isLoading}
@@ -48,6 +81,7 @@ const RegisterModal = () => {
 			actionLabel='Continuar'
 			onClose={registerModal.onClose}
 			onSubmit={handleSubmit(onSubmit)}
+			body={bodyContent}
 		/>
 	)
 }
