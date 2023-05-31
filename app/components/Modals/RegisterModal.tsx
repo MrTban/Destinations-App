@@ -88,7 +88,7 @@ const RegisterModal = () => {
 
 			{/* 
 				//? MICROSOFT 
-				//TODO: ADD MIRCROSOFT ICON
+				//TODO: ADD MICROSOFT ICON
 			*/}
 
 			<div className='text-neutral-500 text-center mt-4 font-light'>
