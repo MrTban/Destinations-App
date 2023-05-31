@@ -11,9 +11,11 @@ import Heading from '../Heading'
 import Input from '../Inputs/Input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
+import useLoginModal from '@/app/hooks/useLoginModal'
 
 const RegisterModal = () => {
 	const registerModal = useRegisterModal()
+	const loginModal = useLoginModal()
 	const [isLoading, setIsLoading] = useState(false)
 
 	const {
