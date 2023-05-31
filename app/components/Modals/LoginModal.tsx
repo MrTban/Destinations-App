@@ -50,7 +50,7 @@ const LoginModal = () => {
 	const bodyContent = (
 		//* LOGIN ACCOUNT
 		<div className='flex flex-col gap-4'>
-			<Heading title='Bienvenido a COOL' subtitle='Crea una cuenta!' />
+			<Heading title='Bienvenido a COOL' subtitle='Inicia sesión!' />
 			{/* //* EMAIL INPUT */}
 			<Input
 				id='email'
@@ -96,12 +96,12 @@ const LoginModal = () => {
 
 			<div className='text-neutral-500 text-center mt-4 font-light'>
 				<div className='flex flex-row items-center justify-center gap-2'>
-					<div>¿Ya tiene una cuenta?</div>
+					<div>¿No tiene una cuenta?</div>
 					<div
-						onClick={registerModal.onClose}
+						onClick={loginModal.onClose}
 						className='text-neutral-800 cursor-pointer hover:underline'
 					>
-						Inicia sesión
+						Cree una
 					</div>
 				</div>
 			</div>
@@ -112,7 +112,7 @@ const LoginModal = () => {
 		<Modal
 			disabled={isLoading}
 			isOpen={loginModal.isOpen}
-			title='Registro'
+			title='Iniciar sesión'
 			actionLabel='Continuar'
 			onClose={loginModal.onClose}
 			onSubmit={handleSubmit(onSubmit)}
