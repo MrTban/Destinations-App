@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
+import useLoginModal from '@/app/hooks/useLoginModal'
+
 import Modal from './Modal'
 import Heading from '../Heading'
 import Input from '../Inputs/Input'
@@ -14,6 +16,7 @@ import Button from '../Button'
 
 const LoginModal = () => {
 	const registerModal = useRegisterModal()
+	const loginModal = useLoginModal()
 	const [isLoading, setIsLoading] = useState(false)
 
 	const {
@@ -45,7 +48,7 @@ const LoginModal = () => {
 	}
 
 	const bodyContent = (
-		//* CREATE ACCOUNT
+		//* LOGIN ACCOUNT
 		<div className='flex flex-col gap-4'>
 			<Heading title='Bienvenido a COOL' subtitle='Crea una cuenta!' />
 			{/* //* EMAIL INPUT */}
@@ -79,7 +82,7 @@ const LoginModal = () => {
 	)
 
 	const footerContent = (
-		//*	 REGISTER WITH EMAIL PROVIDERS
+		//*	 LOGIN WITH EMAIL PROVIDERS
 		<div className='flex flex-col gap-4 mt-3'>
 			<hr />
 
@@ -88,7 +91,7 @@ const LoginModal = () => {
 
 			{/* 
 				//? MICROSOFT 
-				//TODO: ADD MIRCROSOFT ICON
+				//TODO: ADD MICROSOFT ICON
 			*/}
 
 			<div className='text-neutral-500 text-center mt-4 font-light'>
@@ -108,10 +111,10 @@ const LoginModal = () => {
 	return (
 		<Modal
 			disabled={isLoading}
-			isOpen={registerModal.isOpen}
+			isOpen={loginModal.isOpen}
 			title='Registro'
 			actionLabel='Continuar'
-			onClose={registerModal.onClose}
+			onClose={loginModal.onClose}
 			onSubmit={handleSubmit(onSubmit)}
 			body={bodyContent}
 			footer={footerContent}
