@@ -1,5 +1,6 @@
 'use client'
 
+import { signIn } from 'next-auth/react'
 import axios from 'axios'
 import { FcGoogle } from 'react-icons/fc'
 import { useCallback, useState } from 'react'
@@ -13,8 +14,10 @@ import Heading from '../Heading'
 import Input from '../Inputs/Input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
+import { useRouter } from 'next/navigation'
 
 const LoginModal = () => {
+	const router = useRouter()
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
 	const [isLoading, setIsLoading] = useState(false)
@@ -25,7 +28,6 @@ const LoginModal = () => {
 		formState: { errors },
 	} = useForm<FieldValues>({
 		defaultValues: {
-			name: '',
 			email: '',
 			password: '',
 		},
@@ -34,36 +36,32 @@ const LoginModal = () => {
 	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		setIsLoading(true)
 
-		axios
-			.post('api/register', data)
-			.then(() => {
-				registerModal.onClose()
-			})
-			.catch((error) => {
-				toast.error('Algo salió mal')
-			})
-			.finally(() => {
-				setIsLoading(false)
-			})
+		signIn('credentials', {
+			...data,
+			redirect: false,
+		}).then((callback) => {
+			setIsLoading(false)
+
+			if (callback?.ok) {
+				toast.success('Conectado')
+				router.refresh()
+				loginModal.onClose()
+			}
+
+			if (callback?.error) {
+				toast.error(callback.error)
+			}
+		})
 	}
 
 	const bodyContent = (
 		//* LOGIN ACCOUNT
 		<div className='flex flex-col gap-4'>
-			<Heading title='Bienvenido a COOL' subtitle='Inicia sesión!' />
+			<Heading title='Bienvenido de nuevo a COOL' subtitle='Inicia sesión!' />
 			{/* //* EMAIL INPUT */}
 			<Input
 				id='email'
 				label='Email'
-				disabled={isLoading}
-				register={register}
-				errors={errors}
-				required
-			/>
-			{/* //* NAME INPUT */}
-			<Input
-				id='name'
-				label='Nombre'
 				disabled={isLoading}
 				register={register}
 				errors={errors}
