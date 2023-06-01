@@ -9,6 +9,7 @@ import MenuItem from './MenuItem'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
+import useTravelModal from '@/app/hooks/useTravelModal'
 import { SafeUser } from '@/app/types'
 
 interface UserMenuProps {
@@ -18,16 +19,26 @@ interface UserMenuProps {
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
+	const travelModal = useTravelModal()
 	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleOpen = useCallback(() => {
 		setIsOpen((value) => !value)
 	}, [])
+
+	const onTravel = useCallback(() => {
+		if (!currentUser) {
+			return loginModal.onOpen()
+		}
+
+		travelModal.onOpen()
+	}, [currentUser, loginModal, travelModal])
+
 	return (
 		<div className='relative'>
 			<div className='flex flex-row items-center gap-3'>
 				<div
-					onClick={() => {}}
+					onClick={onTravel}
 					className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
 				>
 					Nuevo Destino
@@ -49,7 +60,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 							<>
 								<MenuItem onClick={() => {}} label='Mis favoritos' />
 								<MenuItem onClick={() => {}} label='Mis destinos' />
-								<MenuItem onClick={() => {}} label='Nuevo destino' />
+								<MenuItem onClick={travelModal.onOpen} label='Nuevo destino' />
 								<hr className='border-neutral-300' />
 								<MenuItem onClick={() => signOut()} label='Cerrar sesión' />
 							</>
