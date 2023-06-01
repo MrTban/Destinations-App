@@ -9,10 +9,16 @@ import qs from 'query-string'
 interface CategoryBoxProps {
 	icon: IconType
 	label: string
+	description?: string
 	selected?: boolean
 }
 
-const CategoryBox: React.FC<CategoryBoxProps> = ({ icon: Icon, label, selected }) => {
+const CategoryBox: React.FC<CategoryBoxProps> = ({
+	icon: Icon,
+	label,
+	description,
+	selected,
+}) => {
 	const router = useRouter()
 	const params = useSearchParams()
 
@@ -61,15 +67,8 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ icon: Icon, label, selected }
 				${selected ? 'text-neutral-950' : 'text-neutral-500'}
 			`}
 		>
-			<Icon size={28} />
-			<div
-				className={`
-					${selected ? 'text-base' : 'text-sm'}
-					${selected ? 'font-bold' : 'font-medium'}
-				`}
-			>
-				{label}
-			</div>
+			<Icon size={28} className={`${selected ? 'scale-105' : 'scale-100'}`} />
+			<div className='text-sm font-semibold'>{label}</div>
 		</div>
 	)
 }
