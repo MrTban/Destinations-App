@@ -67,7 +67,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 				${selected ? 'text-neutral-950' : 'text-neutral-500'}
 			`}
 		>
-			<Icon size={28} className={`${selected ? 'scale-105' : 'scale-100'}`} />
+			<Icon size={28} />
 			<div className='text-sm font-semibold'>{label}</div>
 		</div>
 	)
