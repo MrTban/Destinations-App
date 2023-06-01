@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { FieldValues, useForm } from 'react-hook-form'
+import { FieldValues, useForm, SubmitHandler } from 'react-hook-form'
 
 import useTravelModal from '@/app/hooks/useTravelModal'
 
@@ -13,6 +13,11 @@ import CountrySelect from '../Inputs/CountrySelect'
 import Map from '../Map'
 import dynamic from 'next/dynamic'
 import ImageUpload from '../Inputs/ImageUpload'
+import Input from '../Inputs/Input'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+import { error } from 'console'
 
 enum STEPS {
 	CATEGORY = 0,
@@ -22,9 +27,11 @@ enum STEPS {
 }
 
 const TravelModal = () => {
+	const router = useRouter()
 	const travelModal = useTravelModal()
 
 	const [step, setStep] = useState(STEPS.CATEGORY)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const {
 		register,
@@ -69,6 +76,30 @@ const TravelModal = () => {
 
 	const onNext = () => {
 		setStep((value) => value + 1)
+	}
+
+	const onSubmit: SubmitHandler<FieldValues> = (data) => {
+		if (step !== STEPS.DESCRIPTION) {
+			return onNext()
+		}
+
+		setIsLoading(true)
+
+		axios
+			.post('/api/listings', data)
+			.then(() => {
+				toast.success('Destino Creado!')
+				router.refresh()
+				reset()
+				setStep(STEPS.CATEGORY)
+				travelModal.onClose()
+			})
+			.catch(() => {
+				toast.error('Algo salió mal')
+			})
+			.finally(() => {
+				setIsLoading(false)
+			})
 	}
 
 	const actionLabel = useMemo(() => {
@@ -128,7 +159,7 @@ const TravelModal = () => {
 		bodyContent = (
 			<div className='flex flex-col gap-8'>
 				<Heading
-					title='Anade una foto de tu destino'
+					title='Agrega una foto de tu destino'
 					subtitle='Muestrale a los viejeros como se ve tu destino!'
 				/>
 				<ImageUpload
@@ -139,11 +170,39 @@ const TravelModal = () => {
 		)
 	}
 
+	if (step === STEPS.DESCRIPTION) {
+		bodyContent = (
+			<div className='flex flex-col gap-8'>
+				<Heading
+					title='Cómo describirías tu destino?'
+					subtitle='Dile a los viejeros algo referente a tu destino!'
+				/>
+				<Input
+					id='title'
+					label='Título'
+					disabled={isLoading}
+					register={register}
+					errors={errors}
+					required
+				/>
+				<hr />
+				<Input
+					id='description'
+					label='Descripción'
+					disabled={isLoading}
+					register={register}
+					errors={errors}
+					required
+				/>
+			</div>
+		)
+	}
+
 	return (
 		<Modal
 			isOpen={travelModal.isOpen}
 			onClose={travelModal.onClose}
-			onSubmit={onNext}
+			onSubmit={handleSubmit(onSubmit)}
 			actionLabel={actionLabel}
 			secondaryActionLabel={secondaryActionLabel}
 			secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
