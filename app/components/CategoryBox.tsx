@@ -1,6 +1,10 @@
 'use client'
 
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useCallback } from 'react'
 import { IconType } from 'react-icons'
+
+import qs from 'query-string'
 
 interface CategoryBoxProps {
 	icon: IconType
@@ -9,23 +13,53 @@ interface CategoryBoxProps {
 }
 
 const CategoryBox: React.FC<CategoryBoxProps> = ({ icon: Icon, label, selected }) => {
+	const router = useRouter()
+	const params = useSearchParams()
+
+	const handleClick = useCallback(() => {
+		let currentQuery = {}
+
+		if (params) {
+			currentQuery = qs.parse(params.toString())
+		}
+
+		const updatedQuery: any = {
+			...currentQuery,
+			category: label,
+		}
+
+		if (params?.get('category') === label) {
+			delete updatedQuery.category
+		}
+
+		const url = qs.stringifyUrl(
+			{
+				url: '/',
+				query: updatedQuery,
+			},
+			{ skipNull: true }
+		)
+
+		router.push(url)
+	}, [params, label, router])
+
 	return (
 		<div
-			// onClick={handleClick}
+			onClick={handleClick}
 			className={`
-      flex 
-      flex-col 
-      items-center 
-      justify-center 
-      gap-2 
-      p-3 
-      border-b-2
-      hover:text-neutral-900 
-      transition
-      cursor-pointer
-       ${selected ? 'border-b-cyan-400' : 'border-transparent'}
-       ${selected ? 'text-neutral-950' : 'text-neutral-500'}
-       `}
+				flex 
+				flex-col 
+				items-center 
+				justify-center 
+				gap-2 
+				p-3 
+				border-b-2
+				hover:text-neutral-900 
+				transition
+				cursor-pointer
+				${selected ? 'border-b-cyan-400' : 'border-transparent'}
+				${selected ? 'text-neutral-950' : 'text-neutral-500'}
+			`}
 		>
 			<Icon size={28} />
 			<div
