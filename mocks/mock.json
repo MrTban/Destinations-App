@@ -1,0 +1,142 @@
+[
+	{
+		"title": "Cancún",
+		"location": "Quintana Roo, México",
+		"description": "Cancún es conocido por sus hermosas playas de aguas turquesas y arenas blancas. Es un destino popular para relajarse, practicar deportes acuáticos y disfrutar de la vida nocturna.",
+		"imageSrc": "https://example.com/cancun.jpg",
+		"category": "Playas paradisíacas"
+	},
+	{
+		"title": "Roma",
+		"location": "Italia",
+		"description": "Roma es una ciudad histórica llena de monumentos y ruinas antiguas. Pasea por el Coliseo, visita el Vaticano y admira la belleza de la Fontana di Trevi.",
+		"imageSrc": "https://example.com/roma.jpg",
+		"category": "Ciudades históricas"
+	},
+	{
+		"title": "Monte Everest",
+		"location": "Nepal",
+		"description": "El Monte Everest es la montaña más alta del mundo y atrae a montañistas de todo el mundo. Escala sus picos nevados y disfruta de unas vistas impresionantes.",
+		"imageSrc": "https://example.com/everest.jpg",
+		"category": "Montañas y paisajes naturales"
+	},
+	{
+		"title": "Bali",
+		"location": "Indonesia",
+		"description": "Bali es una isla exótica conocida por sus hermosas playas, templos antiguos y paisajes de arrozales. Además, ofrece oportunidades para practicar yoga y relajarse en lujosos resorts.",
+		"imageSrc": "https://example.com/bali.jpg",
+		"category": "Islas exóticas"
+	},
+	{
+		"title": "Zermatt",
+		"location": "Suiza",
+		"description": "Zermatt es un famoso destino de esquí en los Alpes suizos. Además de sus increíbles pistas, ofrece impresionantes vistas del Matterhorn y encantadores pueblos alpinos.",
+		"imageSrc": "https://example.com/zermatt.jpg",
+		"category": "Destinos para hacer esquí"
+	},
+	{
+		"title": "Gran Barrera de Coral",
+		"location": "Australia",
+		"description": "La Gran Barrera de Coral es el sistema de arrecifes de coral más grande del mundo. Es un lugar increíble para hacer buceo y descubrir la diversidad marina única.",
+		"imageSrc": "https://example.com/great_barrier_reef.jpg",
+		"category": "Destinos para bucear o practicar deportes acuáticos"
+	},
+	{
+		"title": "Santorini",
+		"location": "Grecia",
+		"description": "Santorini es una hermosa isla griega famosa por sus impresionantes vistas, pueblos pintorescos y atardeceres románticos. Explora las calles estrechas de Oia y disfruta de la gastronomía local.",
+		"imageSrc": "https://example.com/santorini.jpg",
+		"category": "Pueblos pintorescos"
+	},
+	{
+		"title": "Serengeti",
+		"location": "Tanzania",
+		"description": "El Parque Nacional del Serengeti es famoso por su migración anual de ñus y cebras. Disfruta de un safari inolvidable y contempla la impresionante fauna africana en su hábitat natural.",
+		"imageSrc": "https://example.com/serengeti.jpg",
+		"category": "Destinos para hacer safaris"
+	},
+	{
+		"title": "Cataratas del Iguazú",
+		"location": "Argentina y Brasil",
+		"description": "Las Cataratas del Iguazú son un impresionante conjunto de cascadas ubicadas en la frontera entre Argentina y Brasil. Explora los senderos y maravíllate con la belleza natural del lugar.",
+		"imageSrc": "https://example.com/iguazu_falls.jpg",
+		"category": "Destinos de aventura"
+	},
+	{
+		"title": "Río Nilo",
+		"location": "Egipto",
+		"description": "El Río Nilo es la arteria vital de Egipto y ofrece la oportunidad de realizar un crucero inolvidable. Descubre los tesoros arqueológicos a lo largo del río y disfruta de la vida a bordo.",
+		"imageSrc": "https://example.com/nile_river.jpg",
+		"category": "Destinos para hacer cruceros"
+	},
+	{
+		"title": "Marrakech",
+		"location": "Marruecos",
+		"description": "Marrakech es una ciudad llena de vida, con exóticos zocos, hermosos palacios y fascinantes mezquitas. Sumérgete en la cultura marroquí y disfruta de la animada plaza de Jemaa el-Fnaa.",
+		"imageSrc": "https://example.com/marrakech.jpg",
+		"category": "Destinos para hacer turismo gastronómico"
+	},
+	{
+		"title": "Gran Cañón",
+		"location": "Estados Unidos",
+		"description": "El Gran Cañón es una maravilla natural situada en Arizona, Estados Unidos. Admira la inmensidad de sus cañones y disfruta de las rutas de senderismo y vistas panorámicas.",
+		"imageSrc": "https://example.com/grand_canyon.jpg",
+		"category": "Montañas y paisajes naturales"
+	},
+	{
+		"title": "Kioto",
+		"location": "Japón",
+		"description": "Kioto es famoso por sus templos, jardines zen y arquitectura tradicional. Sumérgete en la cultura japonesa, visita el Templo Kinkaku-ji y disfruta de los hermosos cerezos en flor.",
+		"imageSrc": "https://example.com/kyoto.jpg",
+		"category": "Ciudades de arte y cultura"
+	},
+	{
+		"title": "Desierto del Sahara",
+		"location": "Marruecos",
+		"description": "El Desierto del Sahara es el desierto más grande del mundo y ofrece una experiencia única en camellos y noches estrelladas en un campamento beduino.",
+		"imageSrc": "https://example.com/sahara_desert.jpg",
+		"category": "Desierto"
+	},
+	{
+		"title": "Machu Picchu",
+		"location": "Perú",
+		"description": "Machu Picchu es una antigua ciudad inca ubicada en los Andes peruanos. Es un destino arqueológico fascinante con impresionantes construcciones y vistas panorámicas.",
+		"imageSrc": "https://example.com/machu_picchu.jpg",
+		"category": "Lugares de interés arqueológico"
+	},
+	{
+		"title": "Nueva York",
+		"location": "Estados Unidos",
+		"description": "Nueva York es una ciudad vibrante llena de rascacielos, museos famosos y una escena artística y gastronómica diversa. Descubre lugares icónicos como Times Square y Central Park.",
+		"imageSrc": "https://example.com/new_york.jpg",
+		"category": "Ciudades modernas y cosmopolitas"
+	},
+	{
+		"title": "Bora Bora",
+		"location": "Polinesia Francesa",
+		"description": "Bora Bora es una isla paradisíaca conocida por sus bungalows sobre el agua y aguas cristalinas. Relájate en sus playas de arena blanca y explora el fascinante mundo marino.",
+		"imageSrc": "https://example.com/bora_bora.jpg",
+		"category": "Islas exóticas"
+	},
+	{
+		"title": "Praga",
+		"location": "República Checa",
+		"description": "Praga es una ciudad de cuento de hadas con su impresionante arquitectura gótica y calles empedradas. Visita el Castillo de Praga y disfruta de una cerveza en un auténtico pub checo.",
+		"imageSrc": "https://example.com/prague.jpg",
+		"category": "Ciudades históricas"
+	},
+	{
+		"title": "Machu Picchu",
+		"location": "Perú",
+		"description": "Machu Picchu es una antigua ciudad inca ubicada en los Andes peruanos. Es un destino arqueológico fascinante con impresionantes construcciones y vistas panorámicas.",
+		"imageSrc": "https://example.com/machu_picchu.jpg",
+		"category": "Lugares de interés arqueológico"
+	},
+	{
+		"title": "Dubái",
+		"location": "Emiratos Árabes Unidos",
+		"description": "Dubái es famoso por sus rascacielos futuristas, centros comerciales extravagantes y playas de lujo. Visita el Burj Khalifa, la torre más alta del mundo, y disfruta de la vida de lujo.",
+		"imageSrc": "https://example.com/dubai.jpg",
+		"category": "Destinos para disfrutar de la vida nocturna"
+	}
+]
