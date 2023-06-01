@@ -5,7 +5,7 @@ import { IconType } from 'react-icons'
 interface CategoryInputProps {
 	icon: IconType
 	label: string
-	selected?: boolean
+	selected: boolean
 	onClick: (value: string) => void
 }
 
@@ -17,7 +17,7 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
 }) => {
 	return (
 		<div
-			onClick={() => {}}
+			onClick={() => onClick(label)}
 			className={`
         flex
         flex-col
@@ -25,12 +25,13 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
         rounded-xl
         border-2
         p-4
+        m-auto
         gap-3
         hover:border-black
         transition
         cursor-pointer        
         ${selected ? 'border-cyan-400' : 'border-neutral-200'}
-        ${selected ? 'shadow-lg' : 'shadow-none'}
+        ${selected ? 'shadow-xl shadow-black/20' : 'shadow-none'}
       `}
 		>
 			<Icon size={36} />
