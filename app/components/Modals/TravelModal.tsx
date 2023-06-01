@@ -12,11 +12,12 @@ import CategoryInput from '../Inputs/CategoryInput'
 import CountrySelect from '../Inputs/CountrySelect'
 import Map from '../Map'
 import dynamic from 'next/dynamic'
+import ImageUpload from '../Inputs/ImageUpload'
 
 enum STEPS {
 	CATEGORY = 0,
 	LOCATION = 1,
-	IMAES = 2,
+	IMAGES = 2,
 	DESCRIPTION = 3,
 }
 
@@ -44,6 +45,7 @@ const TravelModal = () => {
 
 	const category = watch('category')
 	const location = watch('location')
+	const imageSrc = watch('imageSrc')
 
 	const Map = useMemo(
 		() =>
@@ -118,6 +120,21 @@ const TravelModal = () => {
 					onChange={(value) => setCustomValue('location', value)}
 				/>
 				<Map center={location?.latlng} />
+			</div>
+		)
+	}
+
+	if (step === STEPS.IMAGES) {
+		bodyContent = (
+			<div className='flex flex-col gap-8'>
+				<Heading
+					title='Anade una foto de tu destino'
+					subtitle='Muestrale a los viejeros como se ve tu destino!'
+				/>
+				<ImageUpload
+					value={imageSrc}
+					onChange={(value) => setCustomValue('imageSrc', value)}
+				/>
 			</div>
 		)
 	}
