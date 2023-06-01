@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { FieldValues, useForm } from 'react-hook-form'
 
 import useTravelModal from '@/app/hooks/useTravelModal'
 
@@ -20,6 +21,33 @@ const TravelModal = () => {
 	const travelModal = useTravelModal()
 
 	const [step, setStep] = useState(STEPS.CATEGORY)
+
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		watch,
+		formState: { errors },
+		reset,
+	} = useForm<FieldValues>({
+		defaultValues: {
+			category: '',
+			location: null,
+			imageSrc: '',
+			title: '',
+			description: '',
+		},
+	})
+
+	const category = watch('category')
+
+	const setCustomValue = (id: string, value: any) => {
+		setValue(id, value, {
+			shouldValidate: true,
+			shouldDirty: true,
+			shouldTouch: true,
+		})
+	}
 
 	const onBack = () => {
 		setStep((value) => value - 1)
