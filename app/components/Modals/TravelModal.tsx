@@ -11,6 +11,7 @@ import { categories } from '../Navbar/categorias'
 import CategoryInput from '../Inputs/CategoryInput'
 import CountrySelect from '../Inputs/CountrySelect'
 import Map from '../Map'
+import dynamic from 'next/dynamic'
 
 enum STEPS {
 	CATEGORY = 0,
@@ -44,6 +45,14 @@ const TravelModal = () => {
 	const category = watch('category')
 	const location = watch('location')
 
+	const Map = useMemo(
+		() =>
+			dynamic(() => import('../Map'), {
+				ssr: false,
+			}),
+		[location]
+	)
+
 	const setCustomValue = (id: string, value: any) => {
 		setValue(id, value, {
 			shouldValidate: true,
@@ -73,7 +82,7 @@ const TravelModal = () => {
 			return undefined
 		}
 
-		return 'Volver'
+		return 'Anterior'
 	}, [step])
 
 	let bodyContent = (
@@ -108,7 +117,7 @@ const TravelModal = () => {
 					value={location}
 					onChange={(value) => setCustomValue('location', value)}
 				/>
-				<Map />
+				<Map center={location?.latlng} />
 			</div>
 		)
 	}
