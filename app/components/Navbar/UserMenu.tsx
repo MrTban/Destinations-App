@@ -16,8 +16,6 @@ interface UserMenuProps {
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
-	console.log(currentUser)
-
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
 	const [isOpen, setIsOpen] = useState(false)
