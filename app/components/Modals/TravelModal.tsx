@@ -9,6 +9,7 @@ import Modal from './Modal'
 import Heading from '../Heading'
 import { categories } from '../Navbar/categorias'
 import CategoryInput from '../Inputs/CategoryInput'
+import CountrySelect from '../Inputs/CountrySelect'
 
 enum STEPS {
 	CATEGORY = 0,
@@ -94,11 +95,23 @@ const TravelModal = () => {
 		</div>
 	)
 
+	if (step === STEPS.LOCATION) {
+		bodyContent = (
+			<div className='flex flex-col gap-8'>
+				<Heading
+					title='Donde se encuentra su destino?'
+					subtitle='Ayude a los demas viajeros a encontrarlo'
+				/>
+				<CountrySelect />
+			</div>
+		)
+	}
+
 	return (
 		<Modal
 			isOpen={travelModal.isOpen}
 			onClose={travelModal.onClose}
-			onSubmit={travelModal.onClose}
+			onSubmit={onNext}
 			actionLabel={actionLabel}
 			secondaryActionLabel={secondaryActionLabel}
 			secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
