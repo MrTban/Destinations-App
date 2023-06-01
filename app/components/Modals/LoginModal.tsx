@@ -18,8 +18,10 @@ import { useRouter } from 'next/navigation'
 
 const LoginModal = () => {
 	const router = useRouter()
+
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
+
 	const [isLoading, setIsLoading] = useState(false)
 
 	const {
@@ -54,6 +56,11 @@ const LoginModal = () => {
 		})
 	}
 
+	const toggle = useCallback(() => {
+		loginModal.onClose()
+		registerModal.onOpen()
+	}, [loginModal, registerModal])
+
 	const bodyContent = (
 		//* LOGIN ACCOUNT
 		<div className='flex flex-col gap-4'>
@@ -85,7 +92,12 @@ const LoginModal = () => {
 			<hr />
 
 			{/* //* GOOGLE */}
-			<Button outline label='Continuar con Google' icon={FcGoogle} onClick={() => {}} />
+			<Button
+				outline
+				label='Continuar con Google'
+				icon={FcGoogle}
+				onClick={() => signIn('google')}
+			/>
 
 			{/* 
 				//? MICROSOFT 
@@ -94,12 +106,12 @@ const LoginModal = () => {
 
 			<div className='text-neutral-500 text-center mt-4 font-light'>
 				<div className='flex flex-row items-center justify-center gap-2'>
-					<div>¿No tiene una cuenta?</div>
+					<div>¿Primera vez en COOL?</div>
 					<div
-						onClick={loginModal.onClose}
+						onClick={toggle}
 						className='text-neutral-800 cursor-pointer hover:underline'
 					>
-						Cree una
+						Crea una cuenta
 					</div>
 				</div>
 			</div>

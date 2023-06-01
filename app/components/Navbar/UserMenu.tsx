@@ -3,11 +3,12 @@
 import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from '../Avatar'
 import { useCallback, useState } from 'react'
+import { signOut } from 'next-auth/react'
+
 import MenuItem from './MenuItem'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
-import { signOut } from 'next-auth/react'
 import { SafeUser } from '@/app/types'
 
 interface UserMenuProps {
@@ -15,6 +16,8 @@ interface UserMenuProps {
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+	console.log(currentUser)
+
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
 	const [isOpen, setIsOpen] = useState(false)
@@ -37,7 +40,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 				>
 					<AiOutlineMenu />
 					<div className='hidden md:block'>
-						<Avatar />
+						<Avatar src={currentUser?.image} />
 					</div>
 				</div>
 			</div>

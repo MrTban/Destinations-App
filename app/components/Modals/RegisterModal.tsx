@@ -12,10 +12,12 @@ import Input from '../Inputs/Input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
 import useLoginModal from '@/app/hooks/useLoginModal'
+import { signIn } from 'next-auth/react'
 
 const RegisterModal = () => {
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
+
 	const [isLoading, setIsLoading] = useState(false)
 
 	const {
@@ -36,7 +38,9 @@ const RegisterModal = () => {
 		axios
 			.post('api/register', data)
 			.then(() => {
+				toast.success('Success')
 				registerModal.onClose()
+				loginModal.onOpen()
 			})
 			.catch((error) => {
 				toast.error('Algo salió mal')
@@ -45,6 +49,11 @@ const RegisterModal = () => {
 				setIsLoading(false)
 			})
 	}
+
+	const toggle = useCallback(() => {
+		registerModal.onClose()
+		loginModal.onOpen()
+	}, [loginModal, registerModal])
 
 	const bodyContent = (
 		//* CREATE ACCOUNT
@@ -86,7 +95,12 @@ const RegisterModal = () => {
 			<hr />
 
 			{/* //* GOOGLE */}
-			<Button outline label='Continuar con Google' icon={FcGoogle} onClick={() => {}} />
+			<Button
+				outline
+				label='Continuar con Google'
+				icon={FcGoogle}
+				onClick={() => signIn('google')}
+			/>
 
 			{/* 
 				//? MICROSOFT 
@@ -97,7 +111,7 @@ const RegisterModal = () => {
 				<div className='flex flex-row items-center justify-center gap-2'>
 					<div>¿Ya tiene una cuenta?</div>
 					<div
-						onClick={registerModal.onClose}
+						onClick={toggle}
 						className='text-neutral-800 cursor-pointer hover:underline'
 					>
 						Inicia sesión
