@@ -33,3 +33,10 @@ Not supports in Firefox and IE */
 ::-webkit-scrollbar-button {
 	display: none;
 }
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+	z-index: 0 !important;
+}
