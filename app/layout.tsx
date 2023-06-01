@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Narbar'
 import ClientOnly from './components/ClientOnly'
 import LoginModal from './components/Modals/LoginModal'
 import RegisterModal from './components/Modals/RegisterModal'
+import TravelModal from './components/Modals/TravelModal'
+
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './actions/getCurrentUser'
 
@@ -24,6 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<body className={font.className}>
 				<ClientOnly>
 					<ToasterProvider />
+					<TravelModal />
 					<LoginModal />
 					<RegisterModal />
 					<Navbar currentUser={currentUser} />
