@@ -10,6 +10,7 @@ import Heading from '../Heading'
 import { categories } from '../Navbar/categorias'
 import CategoryInput from '../Inputs/CategoryInput'
 import CountrySelect from '../Inputs/CountrySelect'
+import Map from '../Map'
 
 enum STEPS {
 	CATEGORY = 0,
@@ -41,6 +42,7 @@ const TravelModal = () => {
 	})
 
 	const category = watch('category')
+	const location = watch('location')
 
 	const setCustomValue = (id: string, value: any) => {
 		setValue(id, value, {
@@ -102,7 +104,11 @@ const TravelModal = () => {
 					title='Donde se encuentra su destino?'
 					subtitle='Ayude a los demas viajeros a encontrarlo'
 				/>
-				<CountrySelect />
+				<CountrySelect
+					value={location}
+					onChange={(value) => setCustomValue('location', value)}
+				/>
+				<Map />
 			</div>
 		)
 	}
