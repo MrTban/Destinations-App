@@ -40,12 +40,12 @@ export const categories = [
 	{
 		label: 'Buceo',
 		icon: GiPoolDive,
-		description: 'Este destino se puede bucear y practicar deportes acuaticos!',
+		description: 'En este destino se puede bucear y practicar deportes acuaticos!',
 	},
 	{
 		label: 'Senderismo',
 		icon: GiHiking,
-		description: 'Este destino se puede hacer senderismo!',
+		description: 'En este destino se puede hacer senderismo!',
 	},
 	{
 		label: 'Esquí',
