@@ -12,7 +12,7 @@ interface EmptyState {
 
 const EmptyState: React.FC<EmptyState> = ({
 	title = 'No hay coincidencias',
-	subtitle = 'Intente cambiar o quitar algun filtro',
+	subtitle = 'Intente cambiar o quitar algún filtro',
 	showReset,
 }) => {
 	const router = useRouter()
@@ -22,11 +22,7 @@ const EmptyState: React.FC<EmptyState> = ({
 			<Heading title={title} subtitle={subtitle} center />
 			<div className='w-48 mt-4'>
 				{showReset && (
-					<Button
-						outline
-						label='Eliminar todos los filtros'
-						onClick={() => router.push('/')}
-					/>
+					<Button outline label='Eliminar filtros' onClick={() => router.push('/')} />
 				)}
 			</div>
 		</div>
