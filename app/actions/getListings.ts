@@ -2,13 +2,13 @@ import prisma from '@/app/libs/prismadb'
 
 export interface IListingsParams {
 	userId?: string
-	localtionValue?: string
+	locationValue?: string
 	category?: string
 }
 
 export default async function getListings(params: IListingsParams) {
 	try {
-		const { userId, localtionValue, category } = params
+		const { userId, locationValue, category } = params
 
 		let query: any = {}
 
@@ -20,8 +20,8 @@ export default async function getListings(params: IListingsParams) {
 			query.category = category
 		}
 
-		if (localtionValue) {
-			query.localtionValue = localtionValue
+		if (locationValue) {
+			query.locationValue = locationValue
 		}
 
 		const listings = await prisma.listing.findMany({
