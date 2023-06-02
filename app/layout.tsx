@@ -6,10 +6,10 @@ import ClientOnly from './components/ClientOnly'
 import LoginModal from './components/Modals/LoginModal'
 import RegisterModal from './components/Modals/RegisterModal'
 import TravelModal from './components/Modals/TravelModal'
+import SearchModal from './components/Modals/SearchModal'
 
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './actions/getCurrentUser'
-import SearchModal from './components/Modals/SearchModal'
 
 const font = Nunito({ subsets: ['latin'] })
 
