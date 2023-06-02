@@ -9,6 +9,7 @@ import TravelModal from './components/Modals/TravelModal'
 
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './actions/getCurrentUser'
+import SearchModal from './components/Modals/SearchModal'
 
 const font = Nunito({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<body className={font.className}>
 				<ClientOnly>
 					<ToasterProvider />
+					<SearchModal />
 					<TravelModal />
 					<LoginModal />
 					<RegisterModal />
