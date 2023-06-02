@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 import Image from 'next/image'
 import HeartButton from '../HeartButton'
+import Button from '../Button'
 
 interface ListingCardProps {
 	data: Listing
@@ -61,6 +62,20 @@ const ListingCard: React.FC<ListingCardProps> = ({
 						<HeartButton listingId={data.id} currentUser={currentUser} />
 					</div>
 				</div>
+				<div className='flex flex-row gap-2 items-center font-semibold text-lg'>
+					<Image
+						alt='Location'
+						src={`https://flagcdn.com/48x36/${location?.value?.toLowerCase()}.png`}
+						width={20}
+						height={20}
+						className='object-fill'
+					/>
+					{location?.label}, {location?.region}
+				</div>
+				<div className='font-medium text-neutral-500'>{data.category}</div>
+				{onAction && actionLabel && (
+					<Button disabled={disabled} small label={actionLabel} onClick={handleCancel} />
+				)}
 			</div>
 		</div>
 	)
