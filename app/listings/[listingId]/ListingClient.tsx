@@ -2,13 +2,19 @@
 
 import { SafeListing, SafeUser } from '@/app/types'
 
+import dynamic from 'next/dynamic'
+
 import { useMemo } from 'react'
 import { categories } from '@/app/components/Navbar/categorias'
 
 import Container from '@/app/components/Container'
 import ListingHead from '@/app/components/Listings/ListingHead'
 import ListingInfo from '@/app/components/Listings/ListingInfo'
+import useCountries from '@/app/hooks/useCountries'
 
+const Map = dynamic(() => import('@/app/components/Map'), {
+	ssr: false,
+})
 interface ListingClientProps {
 	listing: SafeListing & {
 		user: SafeUser
@@ -17,10 +23,12 @@ interface ListingClientProps {
 }
 
 const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser }) => {
+	const { getByValue } = useCountries()
+	const coordinates = getByValue(listing.locationValue)?.latlng
+
 	const category = useMemo(() => {
 		return categories.find((item) => item.label === listing.category)
 	}, [listing.category])
-
 	return (
 		<Container>
 			<div className='max-w-screen-lg mx-auto'>
@@ -39,6 +47,9 @@ const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser }) =
 							description={listing.description}
 							locationValue={listing.locationValue}
 						/>
+						<div className='order-first mb-10 md:order-last md:col-span-3'>
+							<Map center={coordinates} />
+						</div>
 					</div>
 				</div>
 			</div>
