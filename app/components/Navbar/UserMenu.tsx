@@ -11,12 +11,14 @@ import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
 import useTravelModal from '@/app/hooks/useTravelModal'
 import { SafeUser } from '@/app/types'
+import { useRouter } from 'next/navigation'
 
 interface UserMenuProps {
 	currentUser?: SafeUser | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+	const router = useRouter()
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
 	const travelModal = useTravelModal()
@@ -58,8 +60,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 					<div className='flex flex-col cursor-pointer'>
 						{currentUser ? (
 							<>
-								<MenuItem onClick={() => {}} label='Mis favoritos' />
-								<MenuItem onClick={() => {}} label='Mis destinos' />
+								<MenuItem
+									onClick={() => router.push('/favorites')}
+									label='Mis favoritos'
+								/>
+								<MenuItem
+									onClick={() => router.push('/destinations')}
+									label='Mis destinos'
+								/>
 								<MenuItem onClick={travelModal.onOpen} label='Nuevo destino' />
 								<hr className='border-neutral-300' />
 								<MenuItem onClick={() => signOut()} label='Cerrar sesión' />
