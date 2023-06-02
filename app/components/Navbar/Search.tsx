@@ -1,6 +1,6 @@
 'use client'
 
-import { BiSearch } from 'react-icons/bi'
+import { BiWorld } from 'react-icons/bi'
 
 import useSearchModal from '@/app/hooks/useSearchModal'
 
@@ -18,9 +18,9 @@ const Search = () => {
 					Destinos
 				</div>
 				<div className='text-sm pl-6 pr-2 text-gray-500 flex flex-row items-center gap-3'>
-					<div className='hidden sm:block'>Busqueda</div>
-					<div className='p-2 rounded-full text-white bg-cyan-400'>
-						<BiSearch size={14} color='black' />
+					<div className='hidden sm:block'>Ubicación</div>
+					<div className='p-1 rounded-full text-white bg-cyan-400'>
+						<BiWorld size={18} color='black' />
 					</div>
 				</div>
 			</div>
