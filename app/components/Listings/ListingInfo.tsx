@@ -32,9 +32,9 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
 				<div className='text-xl font-semibold flex flex-row items-center gap-2'>
 					<div>
 						Creado por &nbsp;
-						<span className='font-bold text-neutral-600'>{user?.name}</span>
-						<Avatar src={user?.image} />
+						<span className='font-bold text-neutral-500'>{user?.name}</span>
 					</div>
+					<Avatar src={user?.image} />
 				</div>
 			</div>
 			<hr />
