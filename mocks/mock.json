@@ -49,6 +49,13 @@
 		"category": "Pueblos pintorescos"
 	},
 	{
+		"title": "Cueva de Waitomo",
+		"location": "Nueva Zelanda",
+		"description": "La Cueva de Waitomo es un sistema de cuevas ubicado en la región de Waitomo, en la Isla Norte de Nueva Zelanda. Es famosa por sus impresionantes formaciones de piedra caliza y su peculiaridad principal: miles de luciérnagas que iluminan el techo de la cueva, creando un espectáculo mágico conocido como la 'luz de las luciérnagas'. Estas luciérnagas son en realidad gusanos luminosos que emiten una luz verde azulada para atraer a sus presas. El efecto visual es verdaderamente asombroso y atrae a turistas de todo el mundo.",
+		"imageSrc": "https://example.com/cueva_Waitomo.jpg",
+		"category": "Cueva turística"
+	},
+	{
 		"title": "Serengeti",
 		"location": "Tanzania",
 		"description": "El Parque Nacional del Serengeti es famoso por su migración anual de ñus y cebras. Disfruta de un safari inolvidable y contempla la impresionante fauna africana en su hábitat natural.",
@@ -133,17 +140,17 @@
 		"category": "Ciudades históricas"
 	},
 	{
-		"title": "Machu Picchu",
-		"location": "Perú",
-		"description": "Machu Picchu es una antigua ciudad inca ubicada en los Andes peruanos. Es un destino arqueológico fascinante con impresionantes construcciones y vistas panorámicas.",
-		"imageSrc": "https://example.com/machu_picchu.jpg",
-		"category": "Lugares de interés arqueológico"
-	},
-	{
 		"title": "Dubái",
 		"location": "Emiratos Árabes Unidos",
 		"description": "Dubái es famoso por sus rascacielos futuristas, centros comerciales extravagantes y playas de lujo. Visita el Burj Khalifa, la torre más alta del mundo, y disfruta de la vida de lujo.",
 		"imageSrc": "https://example.com/dubai.jpg",
 		"category": "Destinos para disfrutar de la vida nocturna"
+	},
+	{
+		"title": "Parque Nacional de Banff",
+		"location": "Provincia de Alberta, Canadá",
+		"description": "El Parque Nacional de Banff, situado en la provincia de Alberta en Canadá, es uno de los parques nacionales más antiguos y populares del país. Fue establecido en 1885 y es parte de las Montañas Rocosas canadienses, que son conocidas por su impresionante belleza escénica. El parque abarca una extensa área que incluye montañas imponentes, glaciares, lagos de aguas cristalinas y bosques frondosos. Es hogar de una amplia variedad de vida silvestre, como alces, osos, lobos y muchas especies de aves. Los visitantes pueden disfrutar de actividades como senderismo, pesca, camping, esquí, paseos en bote y observación de vida silvestre. El Parque Nacional de Banff es un destino muy popular tanto para los turistas locales como internacionales debido a su espectacular belleza natural y la abundancia de actividades al aire libre que ofrece.",
+		"imageSrc": "https://ejemplo.com/imagen-del-parque-nacional-de-banff.jpg",
+		"category": "Camping"
 	}
 ]
