@@ -1,20 +1,20 @@
 'use client'
 
 import qs from 'query-string'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useCallback, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
-
-import CountrySelect, { CountrySelectValue } from '../Inputs/CountrySelect'
-import Modal from './Modal'
+import { useCallback, useMemo, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import useSearchModal from '@/app/hooks/useSearchModal'
+
+import Modal from './Modal'
+import CountrySelect, { CountrySelectValue } from '../Inputs/CountrySelect'
 import Heading from '../Heading'
 
 const SearchModal = () => {
 	const router = useRouter()
-	const params = useSearchParams()
 	const searchModal = useSearchModal()
+	const params = useSearchParams()
 
 	const [location, setLocation] = useState<CountrySelectValue>()
 
@@ -33,15 +33,15 @@ const SearchModal = () => {
 			currentQuery = qs.parse(params.toString())
 		}
 
-		const updateQuery: any = {
+		const updatedQuery: any = {
 			...currentQuery,
 			locationValue: location?.value,
 		}
 
-		const url = qs.stringify(
+		const url = qs.stringifyUrl(
 			{
 				url: '/',
-				query: updateQuery,
+				query: updatedQuery,
 			},
 			{ skipNull: true }
 		)
