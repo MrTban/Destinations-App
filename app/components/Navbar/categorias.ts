@@ -33,7 +33,7 @@ export const categories = [
 		description: 'En este destino se puede escalar!',
 	},
 	{
-		label: 'Islas',
+		label: 'Isla',
 		icon: GiIsland,
 		description: 'Este destino este en una isla!',
 	},
@@ -53,19 +53,19 @@ export const categories = [
 		description: 'En este destino se puede esquiar!',
 	},
 	{
-		label: 'Historicos',
+		label: 'Historico',
 		icon: GiCastle,
-		description: 'This property is in a castle!',
+		description: 'Este destino puede estar cerca a un lugar historico!',
 	},
 	{
-		label: 'Pueblos',
+		label: 'Pueblo',
 		icon: GiVillage,
-		description: 'En estos destinos puede encontrar pueblos pintorescos!',
+		description: 'En este destino puede encontrar pueblos pintorescos!',
 	},
 	{
 		label: 'Camping',
 		icon: GiForestCamp,
-		description: 'Destinos en los cuales se puede acampar!',
+		description: 'Destino en el cual se puede acampar!',
 	},
 	{
 		label: 'Cueva',
@@ -85,11 +85,11 @@ export const categories = [
 	{
 		label: 'Moderno',
 		icon: GiModernCity,
-		description: 'Destinos de ciudades modernas!',
+		description: 'Destino de ciudade moderna!',
 	},
 	{
 		label: 'Crucero',
 		icon: GiCruiser,
-		description: 'Destinos para ir de crucero!',
+		description: 'Destino para ir de crucero!',
 	},
 ]
