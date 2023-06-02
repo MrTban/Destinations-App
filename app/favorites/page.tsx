@@ -14,7 +14,7 @@ const FavoritesPage = async () => {
 			<ClientOnly>
 				<EmptyState
 					title='No se encontraron favoritos'
-					subtitle='Parece que no tienes listas de favoritos.'
+					subtitle='Parece que no tienes una listas de favoritos'
 				/>
 			</ClientOnly>
 		)
