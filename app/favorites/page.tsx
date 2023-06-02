@@ -1,5 +1,3 @@
-'use client'
-
 import EmptyState from '../components/EmptyState'
 import ClientOnly from '../components/ClientOnly'
 
@@ -8,10 +6,10 @@ import getFavoriteListings from '../actions/getFavoriteListings'
 import FavoritesClient from './FavoritesClient'
 
 const FavoritesPage = async () => {
-	const favorites = await getFavoriteListings()
+	const listings = await getFavoriteListings()
 	const currentUser = await getCurrentUser()
 
-	if (favorites.length === 0) {
+	if (listings.length === 0) {
 		return (
 			<ClientOnly>
 				<EmptyState
@@ -24,7 +22,7 @@ const FavoritesPage = async () => {
 
 	return (
 		<ClientOnly>
-			<FavoritesClient favorites={favorites} currentUser={currentUser} />
+			<FavoritesClient listings={listings} currentUser={currentUser} />
 		</ClientOnly>
 	)
 }
