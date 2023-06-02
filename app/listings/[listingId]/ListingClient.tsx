@@ -2,6 +2,7 @@
 
 import { SafeListing, SafeUser } from '@/app/types'
 
+import useCountries from '@/app/hooks/useCountries'
 import dynamic from 'next/dynamic'
 
 import { useMemo } from 'react'
@@ -10,7 +11,6 @@ import { categories } from '@/app/components/Navbar/categorias'
 import Container from '@/app/components/Container'
 import ListingHead from '@/app/components/Listings/ListingHead'
 import ListingInfo from '@/app/components/Listings/ListingInfo'
-import useCountries from '@/app/hooks/useCountries'
 
 const Map = dynamic(() => import('@/app/components/Map'), {
 	ssr: false,
