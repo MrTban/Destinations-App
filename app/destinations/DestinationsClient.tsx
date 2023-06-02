@@ -28,7 +28,7 @@ const DestinationsClient: React.FC<DestinationsClientProps> = ({
 			axios
 				.delete(`/api/listings/${id}`)
 				.then(() => {
-					toast.success('destino eliminado')
+					toast.success('Destino eliminado')
 					router.refresh()
 				})
 				.catch((error) => {
