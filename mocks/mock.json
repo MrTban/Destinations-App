@@ -84,6 +84,13 @@
 		"category": "Montañas y paisajes naturales"
 	},
 	{
+		"title": "Archipiélago de San Blas",
+		"location": "Panamá",
+		"description": "El archipiélago de San Blas, también conocido como Guna Yala, está ubicado en la costa norte de Panamá, en el mar Caribe. Consiste en un conjunto de aproximadamente 365 islas e islotes, de los cuales solo unas pocas están habitadas. Las islas de San Blas son conocidas por su belleza natural, playas de arena blanca y aguas cristalinas. Además, el archipiélago es hogar de la comunidad indígena Guna, que ha conservado su cultura y tradiciones a lo largo de los años.",
+		"imageSrc": "https://example.com/archipielago_sanblas.jpg",
+		"category": "Islas exóticas"
+	},
+	{
 		"title": "Kioto",
 		"location": "Japón",
 		"description": "Kioto es famoso por sus templos, jardines zen y arquitectura tradicional. Sumérgete en la cultura japonesa, visita el Templo Kinkaku-ji y disfruta de los hermosos cerezos en flor.",
