@@ -1,4 +1,4 @@
-# Prueba técnica Front End CooL - MrTban | Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
+# Prueba técnica Front End CooL - Esteban Marin | Next.js, React, Tailwind, Prisma, MongoDB, NextAuth
 
 ![prueba técnica MrTban](https://res.cloudinary.com/dhfrzje8b/image/upload/v1685972724/capturas/Main_u7nnxe.png)
 
