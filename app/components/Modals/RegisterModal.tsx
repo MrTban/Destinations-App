@@ -77,6 +77,7 @@ const RegisterModal = () => {
 			<Input
 				id='password'
 				label='Contraseña'
+				type='password'
 				disabled={isLoading}
 				register={register}
 				errors={errors}

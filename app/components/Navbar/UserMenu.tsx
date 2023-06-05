@@ -62,11 +62,11 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 							<>
 								<MenuItem
 									onClick={() => router.push('/favorites')}
-									label='Mis favoritos'
+									label={`Mis favoritos (${currentUser.favoriteIds.length})`}
 								/>
 								<MenuItem
 									onClick={() => router.push('/destinations')}
-									label='Mis destinos'
+									label='Mis destinos creados'
 								/>
 								<MenuItem onClick={travelModal.onOpen} label='Nuevo destino' />
 								<hr className='border-neutral-300' />
