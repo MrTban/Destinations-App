@@ -206,7 +206,7 @@ const TravelModal = () => {
 			actionLabel={actionLabel}
 			secondaryActionLabel={secondaryActionLabel}
 			secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
-			title='COOL el mejor lugar'
+			title='Registra tu destino'
 			body={bodyContent}
 		/>
 	)

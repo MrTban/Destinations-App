@@ -62,10 +62,8 @@ const LoginModal = () => {
 	}, [loginModal, registerModal])
 
 	const bodyContent = (
-		//* LOGIN ACCOUNT
 		<div className='flex flex-col gap-4'>
-			<Heading title='Bienvenido de nuevo a COOL' subtitle='Inicia sesión!' />
-			{/* //* EMAIL INPUT */}
+			<Heading title='Bienvenido de nuevo' subtitle='Inicia sesión!' />
 			<Input
 				id='email'
 				label='Email'
@@ -74,7 +72,6 @@ const LoginModal = () => {
 				errors={errors}
 				required
 			/>
-			{/* //* PASSWORD INPUT */}
 			<Input
 				id='password'
 				label='Contraseña'
@@ -87,23 +84,14 @@ const LoginModal = () => {
 	)
 
 	const footerContent = (
-		//*	 LOGIN WITH EMAIL PROVIDERS
 		<div className='flex flex-col gap-4 mt-3'>
 			<hr />
-
-			{/* //* GOOGLE */}
 			<Button
 				outline
 				label='Continuar con Google'
 				icon={FcGoogle}
 				onClick={() => signIn('google')}
 			/>
-
-			{/* 
-				//? MICROSOFT 
-				//TODO: ADD MICROSOFT ICON
-			*/}
-
 			<div className='text-neutral-500 text-center mt-4 font-light'>
 				<div className='flex flex-row items-center justify-center gap-2'>
 					<div>¿Primera vez en COOL?</div>
