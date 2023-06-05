@@ -25,12 +25,10 @@
   - Por ejemplo, filtraremos los destinos que tengan una categoria a la que desee viajar
 - Sistema de favoritos
 - Filtros de URL compartibles
-
   - Por ejemplo, si selecciona una categoría y una ubicación, podrá compartir la URL con un amigo que haya cerrado sesión en otro navegador y verá los mismos resultados.
-
-- Como escribir rutas POST y DELETE en manejadores de rutas (app/api)
-- Como obtener datos en server react components accediendo directamente a la base de datos (SIN API!)
-- Cómo manejar archivos como error.tsx y loading.tsx que son nuevos archivos de plantillas de Next 13 para unificar la carga y el manejo de errores
+- Rutas POST y DELETE
+- Obtener datos en server react components accediendo directamente a la base de datos (SIN API!)
+- Archivos como error.tsx y loading.tsx para unificar la carga y el manejo de errores
 - ¡Cómo manejar las relaciones entre componentes Server y Child!
 - Cuenta con modales para diferentes tareas
 
