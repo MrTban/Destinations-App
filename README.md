@@ -1,4 +1,4 @@
-# Prueba técnica Front End CooL - Esteban Marin | Next.js, React, Tailwind, Prisma, MongoDB, NextAuth
+# Full Stack App | Next.js, React, Tailwind, Prisma, MongoDB, NextAuth
 
 ![prueba técnica MrTban](https://res.cloudinary.com/dhfrzje8b/image/upload/v1685972724/capturas/Main_u7nnxe.png)
 
@@ -8,7 +8,6 @@
 
 #
 
-`Antes que nada muchas gracias por la oportunidad de presentar esta prueba. Queria agregar que al estar realizado en Next.js y como aún esta en etapa de producción es un poco lento a la hora de cambiar de paginas, el router no es lo suficientemente rapido como deberia, así que por favor tener un poco de paciencia con algunas de las funciones que este contiene`
 
 ## Características:
 
