@@ -44,7 +44,7 @@
 ### Clonar repositorio
 
 ```shell
-git clone https://github.com/MrTban/prueba-tecnica-cool.git
+git clone https://github.com/MrTban/Destinations-App.git
 ```
 
 ### Instalar paquetes
